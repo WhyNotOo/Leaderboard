@@ -31,7 +31,12 @@
     "premium": false,
     "devices": [
       {
-        "devices": "all",
+        "devices": "[
+          "phone",
+          "tablet",
+          "desktop",
+          "tv"
+        ]",
         "startfile": "app/index.html",
         "orientation": "auto",
         "images": "marketing/leaderboard-big.jpg",
