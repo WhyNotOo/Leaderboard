@@ -1,0 +1,143 @@
+{
+  "name": "leaderboard",
+  "version": "1.0",
+  "fullName": "Leaderboard",
+  "description": "Show the results of the quiz template to see who is the best player in the quiz",
+  "keywords": [
+    "leaderboard",
+    "quiz",
+    "winner",
+    "PGM"
+  ],
+  "contributors": [
+    {
+      "name": "Albessard",
+      "email": "k.albessard@gmail.com",
+      "web": "http://www.kevin-albessard.com"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "JoshFire Factory",
+      "email": "contact@joshfire.com",
+      "web": "http://www.joshfire.com"
+    }
+  ],
+  "joshfire": {
+    "images": {
+      "small":"marketing/leaderboard-small.jpg",
+      "big":"marketing/leaderboard-big.jpg"
+    },
+    "premium": false,
+    "devices": [
+      {
+        "devices": "all",
+        "startfile": "app/index.html",
+        "orientation": "auto",
+        "images": "marketing/leaderboard-big.jpg",
+        "screenshots": [
+          "marketing/screen1.png",
+          "marketing/screen2.jpg"
+        ],
+        "disablePreview": false
+      }
+    ],
+
+    "datasources": {
+      "scores": {
+        "title": "List of user scores",
+        "description": "Spreadsheet or database",
+        "multiple": true
+      }
+    },
+
+    "options": {
+      "schema": {
+        "language": {
+          "title": "Language",
+          "type": "string",
+          "enum": [
+            "English",
+            "French",
+            "German"
+          ],
+          "default": "English"
+        },
+        "abouthtml": {
+          "type": "string",
+          "title": "About page",
+          "description": "Text that will appear in the About page. You may use HTML markup."
+        }
+      },
+
+      "form": [
+        "datasources.scores",
+        {
+          "type": "fieldset",
+          "legend": "About the application",
+          "items": [
+            {
+              "key": "abouthtml",
+              "type": "textarea",
+              "description": "Text that will appear in the About page. You may use HTML markup."
+            }
+          ]
+        }
+      ]
+    },
+
+    "libraries": [
+      {
+        "name": "Async.js",
+        "homepage": "https://github.com/caolan/async",
+        "description": "Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript. Although originally designed for use with node.js, it can also be used directly in the browser.",
+        "repositories": [
+          {
+            "type": "git",
+            "url": "https://github.com/caolan/async.git"
+          }
+        ],
+        "licenses": [
+          {
+            "type": "MIT",
+            "url": "license-async.txt"
+          }
+        ]
+      },
+      {
+        "name": "jQuery",
+        "homepage": "http://jquery.com/",
+        "description": "jQuery is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.",
+        "repositories": [
+          {
+            "type": "git",
+            "url": "https://github.com/jquery/jquery.git"
+          }
+        ],
+        "licenses": [
+          {
+            "type": "MIT",
+            "url": "license-jquery.txt"
+          }
+        ]
+      },
+      {
+        "name": "Underscore.js",
+        "homepage": "http://documentcloud.github.com/underscore/",
+        "description": "Underscore is a utility-belt library for JavaScript that provides a lot of the functional programming support that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects. It's the tie to go along with jQuery's tux, and Backbone.js's suspenders.",
+        "repositories": [
+          {
+            "type": "git",
+            "url": "https://github.com/documentcloud/underscore.git"
+          }
+        ],
+        "licenses": [
+          {
+            "type": "MIT",
+            "url": "license-underscore.txt"
+          }
+        ]
+      }
+    ]
+  }
+}
