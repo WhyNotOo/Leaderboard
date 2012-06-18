@@ -87,28 +87,6 @@
               "description": "Text that will appear in the About page. You may use HTML markup."
             }
           ]
-        },
-        {
-          "type": "fieldset",
-          "legend": "Title of the board",
-          "items": [
-            {
-              "key": "boardtitle",
-              "type": "input",
-              "description": "The title of the board if several datasources are displayed."
-            }
-          ]
-        },
-        {
-          "type": "fieldset",
-          "legend": "Max range to display entries",
-          "items": [
-            {
-              "key": "entriesrange",
-              "type": "input",
-              "description": "Precise a max range for displaying entries, if the datasource is too long."
-            }
-          ]
         }
       ]
     },
