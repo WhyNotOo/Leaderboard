@@ -68,23 +68,33 @@
           ],
           "default": "English"
         },
-        "abouthtml": {
+        "boardtitle": {
           "type": "string",
-          "title": "About page",
-          "description": "Text that will appear in the About page. You may use HTML markup."
+          "title": "Board title",
+          "description": "The title displayed if there is more than one datasource"
+        },
+        "entriesrange": {
+          "type": "string",
+          "title": "Entries range",
+          "description": "Precise a maximum number of entries to load"
         }
       },
 
       "form": [
         "datasources.scores",
         {
-          "type": "fieldset",
-          "legend": "About the application",
           "items": [
             {
-              "key": "abouthtml",
-              "type": "textarea",
-              "description": "Text that will appear in the About page. You may use HTML markup."
+              "key": "boardtitle",
+              "description": "The title displayed if there is more than one datasource."
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "key": "entriesrange",
+              "description": "Precise a maximum number of entries to load."
             }
           ]
         }
