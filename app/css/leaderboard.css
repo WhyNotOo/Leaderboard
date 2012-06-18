@@ -58,11 +58,37 @@ td { vertical-align: top; }
  * USER STYLESHEET
  */
 
+/*** Global style ***/
+body, html  {height:100%;}
+#container  {position:relative; min-height:100%;}
+
+header h1 {float:left;}
+
+#content  {position:absolute; left:0; width:100%; margin:0; padding:0;}
+.content  {margin:0 auto; height:100%; overflow:auto;}
 
 
+/*** Responsive style ***/
 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .content  {width:100%;}
+}
 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .content  {width:100%;}
+}
 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1366px) {
+  .content  {width:75%;}
+}
+
+/* Large desktop & TV */
+@media (min-width: 1367px) {
+  .content  {width:60%;}
+}
 
 /**
  * END USER STYLESHEET

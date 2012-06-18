@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"data",
+				"datasource"
+			],
+			[
+				"tab",
+				"tabLink"
+			],
+			[
+				"get",
+				"getSpecificDatasource"
+			],
+			[
+				"fa",
+				"familyName"
+			],
+			[
+				"app",
+				"application"
+			],
+			[
+				"h",
+				"h2	Tag"
+			],
+			[
+				"th",
+				"thead	Tag"
+			],
+			[
+				"he",
+				"header	Tag"
+			],
+			[
 				"qui",
 				"quiz"
 			],
@@ -18,10 +50,6 @@
 			[
 				"set",
 				"setItem"
-			],
-			[
-				"get",
-				"getUserLogin"
 			],
 			[
 				"url",
@@ -220,20 +248,12 @@
 				"talkerID"
 			],
 			[
-				"app",
-				"app_router"
-			],
-			[
 				"tal",
 				"talkerID"
 			],
 			[
 				"is",
 				"isHidden"
-			],
-			[
-				"h",
-				"h3	Tag"
 			],
 			[
 				"rw",
@@ -314,10 +334,6 @@
 			[
 				"sc",
 				"script	Tag"
-			],
-			[
-				"data",
-				"data-name"
 			],
 			[
 				"botto",
@@ -431,6 +447,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/index.html",
+			"settings":
+			{
+				"buffer_size": 2576,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 4024,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/leaderboard.js",
+			"settings":
+			{
+				"buffer_size": 2308,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/css/leaderboard.css",
+			"settings":
+			{
+				"buffer_size": 4624,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/css/bootstrap-responsive.min.css",
+			"settings":
+			{
+				"buffer_size": 11443,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -468,6 +524,16 @@
 	},
 	"file_history":
 	[
+		"/home/yoda/workspace/factory-template-talkerdb/js/script.js",
+		"/home/yoda/workspace/factory-template-talkerdb/css/bootstrap.css",
+		"/home/yoda/workspace/factory-template-talkerdb/css/bootstrap-responsive.css",
+		"/home/yoda/workspace/factory-template-talkerdb/css/bootstrap.min.css",
+		"/home/yoda/workspace/factory-template-talkerdb/index.html",
+		"/home/yoda/workspace/factory-template-talkerdb/package.json",
+		"/home/yoda/workspace/ALBESSARD_Kevin_HTML5/index.html",
+		"/home/yoda/workspace/template-leaderboard/app/index.html",
+		"/home/yoda/workspace/ALBESSARD_Kevin_HTML5/css/style.css",
+		"/home/yoda/workspace/template-leaderboard/app/js/jquery1.7.2.js",
 		"/home/yoda/workspace/template-quiz/app/js/quiz.js",
 		"/home/yoda/Bureau/flags.js",
 		"/home/yoda/quiz.js",
@@ -478,13 +544,11 @@
 		"/home/yoda/workspace/template-quiz/app/index.tablet.html",
 		"/home/yoda/workspace/template-quiz/app/index.mobile.min.html",
 		"/home/yoda/workspace/factory-template-talkerdb/js/gdata.js",
-		"/home/yoda/workspace/ALBESSARD_Kevin_HTML5/index.html",
 		"/home/yoda/workspace/factory-template-talkerdb/test.html",
 		"/home/yoda/workspace/factory-template-talkerdb/robots.txt",
 		"/home/yoda/workspace/factory-template-talkerdb/gdata.js",
 		"/home/yoda/workspace/factory-template-talkerdb/js/script2.js",
 		"/home/yoda/workspace/instagram-thibaut/instagram.js",
-		"/home/yoda/workspace/factory-template-talkerdb/js/script.js",
 		"/home/yoda/workspace/factory-template-talkerdb/js/libs/underscore.js",
 		"/home/yoda/workspace/factory-template-talkerdb/js/libs/backbone.js",
 		"/home/yoda/workspace/factory-template-talkerdb/js/libs/jquery-ui-1.8.21.custom/jquery-ui-1.8.21.custom.min.js",
@@ -593,6 +657,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"</td>",
+			"<td>",
+			"hidden",
+			".table",
+			"table",
+			".table",
+			"table",
 			"<<",
 			"('.quizlogout').",
 			"<<",
@@ -713,14 +784,7 @@
 			"resultSheetID",
 			"scope",
 			"appendRow",
-			"initTopRow",
-			"updateEntry",
-			"h4",
-			"various",
-			"status",
-			"changes",
-			".edit",
-			"social"
+			"initTopRow"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -728,6 +792,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"</th>",
+			"<th>",
 			"",
 			"h5",
 			":",
@@ -750,13 +816,155 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/index.html",
+					"settings":
+					{
+						"buffer_size": 2576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1300,
+								1300
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1133.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 4024,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1271,
+								1271
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 648.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 2,
+					"file": "app/js/leaderboard.js",
+					"settings":
+					{
+						"buffer_size": 2308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1290,
+								1290
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 486.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/css/leaderboard.css",
+					"settings":
+					{
+						"buffer_size": 4624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3228,
+								3228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 914.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/css/bootstrap-responsive.min.css",
+					"settings":
+					{
+						"buffer_size": 11443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11355,
+								11355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -788,7 +996,7 @@
 		"cols":
 		[
 			0.0,
-			0.639092240117,
+			0.417276720352,
 			1.0
 		],
 		"rows":
