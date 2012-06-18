@@ -77,48 +77,50 @@
           "type": "string",
           "title": "Entries range",
           "description": "Precise a maximum number of entries to load"
+        },
+        "colornavbartop": {
+          "type": "string",
+          "title": "First color navbar",
+          "description": "The first color for the navbars (displayed top gradient)"
+        },
+        "colornavbarbottom": {
+          "type": "string",
+          "title": "Second color navbar",
+          "description": "The second color for the navbars (displayed bottom gradient)"
+        },
+        "colortext": {
+          "type": "string",
+          "title": "Text color",
+          "description": "The color for the text in the top and bottom navbars"
         }
       },
 
       "form": [
         "datasources.scores",
         {
-          "items": [
-            {
-              "key": "boardtitle",
-              "description": "The title displayed if there is more than one datasource."
-            }
-          ]
+          "key": "boardtitle",
+          "description": "The title displayed if there is more than one datasource."
         },
         {
-          "items": [
-            {
-              "key": "entriesrange",
-              "description": "Precise a maximum number of entries to load."
-            }
-          ]
+          "key": "entriesrange",
+          "description": "Precise a maximum number of entries to load."
+        },
+        {
+          "key": "colornavbartop",
+          "description": "Precise a maximum number of entries to load."
+        },
+        {
+          "key": "colornavbarbottom",
+          "description": "Precise a maximum number of entries to load."
+        },
+        {
+          "key": "colortext",
+          "description": "Precise a maximum number of entries to load."
         }
       ]
     },
 
     "libraries": [
-      {
-        "name": "Async.js",
-        "homepage": "https://github.com/caolan/async",
-        "description": "Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript. Although originally designed for use with node.js, it can also be used directly in the browser.",
-        "repositories": [
-          {
-            "type": "git",
-            "url": "https://github.com/caolan/async.git"
-          }
-        ],
-        "licenses": [
-          {
-            "type": "MIT",
-            "url": "license-async.txt"
-          }
-        ]
-      },
       {
         "name": "jQuery",
         "homepage": "http://jquery.com/",
@@ -133,23 +135,6 @@
           {
             "type": "MIT",
             "url": "license-jquery.txt"
-          }
-        ]
-      },
-      {
-        "name": "Underscore.js",
-        "homepage": "http://documentcloud.github.com/underscore/",
-        "description": "Underscore is a utility-belt library for JavaScript that provides a lot of the functional programming support that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects. It's the tie to go along with jQuery's tux, and Backbone.js's suspenders.",
-        "repositories": [
-          {
-            "type": "git",
-            "url": "https://github.com/documentcloud/underscore.git"
-          }
-        ],
-        "licenses": [
-          {
-            "type": "MIT",
-            "url": "license-underscore.txt"
           }
         ]
       }

@@ -66,22 +66,27 @@ brown:    #5c4d47
 */
 
 /*** Global style ***/
-body, html  {width:100%; height:100%; overflow:hidden;}
-body        {background:url('images/body.jpg') no-repeat center center fixed #5c4d47; -o-background-size: 100% 100%, auto; -moz-background-size: 100% 100%, auto; -webkit-background-size: 100% 100%, auto; background-size: 100% 100%, auto;}
-#container  {position:relative; min-height:100%;}
+body, html                        {width:100%; height:100%; overflow:hidden; background:#5c4d47;}
+#container                        {position:relative; min-height:100%;}
+  #container .nav .active a       {background:#5c4d47;}
 
-#container .nav .active a   {background:#5c4d47;}
-header, footer        {position:relative; height:40px;}
-  header h1, footer h4  {float:left; color:#fff;}
-  footer h4             {margin-top:5px;}
-  footer .navbar-inner  {padding:5px 0;}
-  footer .emirates      {position:absolute; top:-70px; right:30px;}
+header, footer                    {position:relative; height:40px;}
+  
+  header h1, footer h4            {float:left; color:#fff;}
+  header .navbar-inner,
+  footer .navbar-inner            {min-height:30px; background-color:#a4141d;background-image:-moz-linear-gradient(top,#ae161f,#98131b);background-image:-ms-linear-gradient(top,#ae161f,#98131b);background-image:-webkit-gradient(linear,0 0,0 100%,from(#ae161f),to(#98131b));background-image:-webkit-linear-gradient(top,#ae161f,#98131b);background-image:-o-linear-gradient(top,#ae161f,#98131b);background-image:linear-gradient(top,#ae161f,#98131b);}
 
+  footer h4                       {margin-top:5px;}
+  footer .emirates                {position:absolute; width:6%; bottom:0; right:20px; box-shadow:0 3px 7px black;}
 
-#content  {position:absolute; left:0; width:100%; margin:0; padding:0; color:#fff;}
-.content  {margin:0 auto; height:100%; overflow:auto;}
-  .content .table th, .content .table td  {text-align:center;}
-  .content .score   {font-size:1.2em; background:#222;}
+#content                          {position:absolute; left:0; width:100%; margin:0; padding:0; color:#fff;}
+.content                          {margin:0 auto; height:100%; overflow:auto;}
+  .content .table th, 
+  .content .table td              {text-align:center;}
+  .content .table tr:nth-child(odd) td  {background:rgba(255, 255, 255, 0.1);}
+  .content .table tr:hover td     {background:#a4141d;}
+  .content .score                 {font-size:1.2em;}
+  .content .empty                 {margin-top:50px; text-align:center;}
 
 
 /*** Responsive style ***/

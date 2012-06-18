@@ -12,9 +12,6 @@ var app = {
   table       : $('#views .table'),
 
   getScores: function() {
-    if(Joshfire.factory.config.app.logo) {
-      $('footer .container-fluid').append('<img src="'+Joshfire.factory.config.app.logo.contentURL+'" title="Emirates" class="emirates" />');
-    }
     // If only one datasource
     if(app.scores.children.length == 1) {
       app.scores.find({}, function (err, data) {
@@ -32,11 +29,11 @@ var app = {
 
             if(app.options.entriesrange && app.options.entriesrange < user.length) {
               for(var i=0, len = app.options.entriesrange; i<len; i++) {
-                $('#content .content .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+                $('#content .content .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
               }
             } else {
               for(var i=0, len = user.length; i<len; i++) {
-                $('#content .content .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+                $('#content .content .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
               }
             }
           });
@@ -75,18 +72,36 @@ var app = {
         var userTable = app.table.clone();
         $('#'+name).html(userTable);
 
-        if(app.options.entriesrange && app.options.entriesrange < user.length) {
-          console.log(app.options.entriesrange);
-          for(var i=0, len = app.options.entriesrange; i<len; i++) {
-            $('#'+name+' .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
-          }
+        if(user.length == 0) {
+          $('#'+name).html('<h2 class="empty">No user has already registered its score for this quiz.</h2>');
         } else {
-          for(var i=0, len = user.length; i<len; i++) {
-            $('#'+name+' .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+          if(app.options.entriesrange && app.options.entriesrange < user.length) {
+            for(var i=0, len = app.options.entriesrange; i<len; i++) {
+              $('#'+name+' .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+            }
+          } else {
+            for(var i=0, len = user.length; i<len; i++) {
+              $('#'+name+' .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+            }
           }
         }
       }
     });
+  },
+
+  addImages: function() {
+    if(Joshfire.factory.config.app.icon) {
+      $('footer .container-fluid').append('<img src="'+Joshfire.factory.config.app.icon.contentURL+'" title="Emirates" class="emirates" />');
+    }
+    if(Joshfire.factory.config.app.logo) {
+      $('#container').css({
+        'background'              : 'url('+Joshfire.factory.config.app.logo.contentURL+') no-repeat center center fixed #5c4d47',
+        '-o-background-size'      : 'cover',
+        '-moz-background-size'    : 'cover',
+        '-webkit-background-size' : 'cover',
+        'background-size'         : 'cover'
+      });
+    }
   },
 
   showContent: function(link) {
@@ -119,6 +134,7 @@ $(window).resize(function() {
 // Launch APP
 $(document).ready(function() {
   app.resizeContent();
+  app.addImages();
   app.getScores();
 });
 
