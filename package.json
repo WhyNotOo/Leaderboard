@@ -25,8 +25,8 @@
   ],
   "joshfire": {
     "images": {
-      "small":"marketing/leaderboard-small.jpg",
-      "big":"marketing/leaderboard-big.jpg"
+      "small":"marketing/leaderboard-small.png",
+      "big":"marketing/leaderboard-big.png"
     },
     "premium": false,
     "devices": [
@@ -39,10 +39,10 @@
         ],
         "startfile": "app/index.html",
         "orientation": "auto",
-        "images": "marketing/leaderboard-big.jpg",
+        "images": "marketing/leaderboard-big.png",
         "screenshots": [
           "marketing/screen1.png",
-          "marketing/screen2.jpg"
+          "marketing/screen2.png"
         ],
         "disablePreview": false
       }
@@ -85,6 +85,28 @@
               "key": "abouthtml",
               "type": "textarea",
               "description": "Text that will appear in the About page. You may use HTML markup."
+            }
+          ]
+        },
+        {
+          "type": "fieldset",
+          "legend": "Title of the board",
+          "items": [
+            {
+              "key": "boardtitle",
+              "type": "input",
+              "description": "The title of the board if several datasources are displayed."
+            }
+          ]
+        },
+        {
+          "type": "fieldset",
+          "legend": "Max range to display entries",
+          "items": [
+            {
+              "key": "entriesrange",
+              "type": "input",
+              "description": "Precise a max range for displaying entries, if the datasource is too long."
             }
           ]
         }
