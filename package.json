@@ -107,15 +107,15 @@
         },
         {
           "key": "colornavbartop",
-          "description": "Precise a maximum number of entries to load."
+          "description": "The first color for the navbars (displayed top gradient)"
         },
         {
           "key": "colornavbarbottom",
-          "description": "Precise a maximum number of entries to load."
+          "description": "The second color for the navbars (displayed bottom gradient)"
         },
         {
           "key": "colortext",
-          "description": "Precise a maximum number of entries to load."
+          "description": "The color for the text in the top and bottom navbars"
         }
       ]
     },
