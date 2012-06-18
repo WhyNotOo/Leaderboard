@@ -6,14 +6,17 @@
 (function ($) {
 
 var app = {
+  options     : Joshfire.factory.config.template.options || {},
   scores      : Joshfire.factory.getDataSource("scores"),
   users       : [],
   table       : $('#views .table'),
 
   getScores: function() {
+    if(Joshfire.factory.config.app.logo) {
+      $('footer .container-fluid').append('<img src="'+Joshfire.factory.config.app.logo.contentURL+'" title="Emirates" class="emirates" />');
+    }
     // If only one datasource
     if(app.scores.children.length == 1) {
-      console.log('1 datasource');
       app.scores.find({}, function (err, data) {
         if(err) {
           console.log('erreur : '+err);
@@ -22,26 +25,26 @@ var app = {
           $.map(data.entries, function (entry, idx) {
             var user = entry.entries;
 
-            console.log(user);
-
             $('header h1').html(app.scores.children[0].name);
 
             var userTable = app.table.clone();
             $('#content .content').prepend(userTable);
 
-            for(i=0, len = user.length; i<len; i++) {
-              $('#content .content .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td>'+user[i]['quiz:score']+'</td></tr>');
+            if(app.options.entriesrange && app.options.entriesrange < user.length) {
+              for(var i=0, len = app.options.entriesrange; i<len; i++) {
+                $('#content .content .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+              }
+            } else {
+              for(var i=0, len = user.length; i<len; i++) {
+                $('#content .content .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+              }
             }
           });
         }
       });
     } else {
-      console.log('Many datasource');
-
-      $('header h1').html('Leaderboard');
+      $('title, header h1').html(app.options.boardtitle);
       $('.nav').removeClass('hidden');
-
-      console.log(app.scores.children);
 
       for(var i = 0, len = app.scores.children.length; i < len; i++) {
         var datasource = app.scores.children[i];
@@ -61,7 +64,6 @@ var app = {
   },
 
   getUserDatasource: function(datasource) {
-    console.log('getUserDatasource called');
     datasource.find({}, function(err, data) {
       if(err) {
         console.log('erreur : '+err);
@@ -73,8 +75,15 @@ var app = {
         var userTable = app.table.clone();
         $('#'+name).html(userTable);
 
-        for(i=0, len = user.length; i<len; i++) {
-          $('#'+name+' .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td>'+user[i]['quiz:score']+'</td></tr>');
+        if(app.options.entriesrange && app.options.entriesrange < user.length) {
+          console.log(app.options.entriesrange);
+          for(var i=0, len = app.options.entriesrange; i<len; i++) {
+            $('#'+name+' .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+          }
+        } else {
+          for(var i=0, len = user.length; i<len; i++) {
+            $('#'+name+' .table').append('<tr><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+          }
         }
       }
     });
@@ -90,8 +99,8 @@ var app = {
 
   resizeContent: function() {
     var windowH = parseInt($(window).height(), 10);
-    var headerH = parseInt($('header .navbar').height(), 10) + 10;
-    var footerH = parseInt($('footer .navbar').height(), 10);
+    var headerH = parseInt($('header').height(), 10) + 10;
+    var footerH = parseInt($('footer').height(), 10);
     $('#content').height(windowH - headerH - footerH - 10).css('top', headerH);
   }
 
@@ -108,7 +117,9 @@ $(window).resize(function() {
 });
 
 // Launch APP
-app.resizeContent();
-app.getScores();
+$(document).ready(function() {
+  app.resizeContent();
+  app.getScores();
+});
 
 })(jQuery);
