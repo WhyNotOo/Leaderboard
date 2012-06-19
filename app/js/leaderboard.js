@@ -29,11 +29,13 @@ var app = {
 
             if(app.options.entriesrange && app.options.entriesrange < user.length) {
               for(var i=0, len = app.options.entriesrange; i<len; i++) {
-                $('#content .content .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+                var date = app.getScoreDate(user[i].dateCreated);
+                $('#content .content .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+date+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
               }
             } else {
               for(var i=0, len = user.length; i<len; i++) {
-                $('#content .content .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+                var date = app.getScoreDate(user[i].dateCreated);
+                $('#content .content .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+date+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
               }
             }
           });
@@ -66,10 +68,8 @@ var app = {
         console.log('erreur : '+err);
         alert('Une erreur est survenue pendant le chargement de l\'application. Merci de recharger la page.');
       } else {
-        var user = data.entries;
-        var name = data.name.replace(' ', '');
-
-        var userTable = app.table.clone();
+        var user = data.entries, name = data.name.replace(' ', ''), userTable = app.table.clone();
+        
         $('#'+name).html(userTable);
 
         if(user.length == 0) {
@@ -77,11 +77,13 @@ var app = {
         } else {
           if(app.options.entriesrange && app.options.entriesrange < user.length) {
             for(var i=0, len = app.options.entriesrange; i<len; i++) {
-              $('#'+name+' .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+              var date = app.getScoreDate(user[i].dateCreated);
+              $('#'+name+' .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+date+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
             }
           } else {
             for(var i=0, len = user.length; i<len; i++) {
-              $('#'+name+' .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].gender+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+user[i].email+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
+              var date = app.getScoreDate(user[i].dateCreated);
+              $('#'+name+' .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+date+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
             }
           }
         }
@@ -89,7 +91,17 @@ var app = {
     });
   },
 
-  addImages: function() {
+  getScoreDate: function(date) {
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        dateCreated = new Date(date),
+        dateD = dateCreated.getDate(),
+        dateM = dateCreated.getMonth(),
+        dateY = dateCreated.getFullYear(),
+        month = monthNames[dateM];
+    return month+' '+dateD+' '+dateY;
+  },
+
+  addCustomConfig: function() {
     if(Joshfire.factory.config.app.icon) {
       $('footer .container-fluid').append('<img src="'+Joshfire.factory.config.app.icon.contentURL+'" title="Emirates" class="emirates" />');
     }
@@ -101,6 +113,19 @@ var app = {
         '-webkit-background-size' : 'cover',
         'background-size'         : 'cover'
       });
+    }
+    if(app.options.colornavbartop && app.options.colornavbarbottom) {
+      var top = '#'+app.options.colornavbartop, bot = '#'+app.options.colornavbarbottom, navbar = document.getElementsByClassName('navbar-inner');
+      for(var i=0; i<navbar.length; i++) {
+        navbar[i].style.background = '-webkit-linear-gradient(top,'+top+','+bot+')';
+        navbar[i].style.background = '-moz-linear-gradient(top,'+top+','+bot+')';
+        navbar[i].style.background = '-ms-linear-gradient(top,'+top+','+bot+')';
+        navbar[i].style.background = '-o-linear-gradient(top,'+top+','+bot+')';
+        navbar[i].style.background = 'linear-gradient(top,'+top+','+bot+')';
+      }
+    }
+    if(app.options.colortext) {
+      $('header h1, footer h4').css('color', '#'+app.options.colortext);
     }
   },
 
@@ -114,9 +139,9 @@ var app = {
 
   resizeContent: function() {
     var windowH = parseInt($(window).height(), 10);
-    var headerH = parseInt($('header').height(), 10) + 10;
+    var headerH = parseInt($('header').height(), 10);
     var footerH = parseInt($('footer').height(), 10);
-    $('#content').height(windowH - headerH - footerH - 10).css('top', headerH);
+    $('#content').height(windowH - headerH - footerH - 10);
   }
 
 }; /** END APP **/
@@ -134,7 +159,7 @@ $(window).resize(function() {
 // Launch APP
 $(document).ready(function() {
   app.resizeContent();
-  app.addImages();
+  app.addCustomConfig();
   app.getScores();
 });
 

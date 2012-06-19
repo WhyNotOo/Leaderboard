@@ -4,6 +4,66 @@
 		"selected_items":
 		[
 			[
+				"colo",
+				"colortext"
+			],
+			[
+				"app",
+				"app"
+			],
+			[
+				"na",
+				"navbar-inner"
+			],
+			[
+				"add",
+				"addImage"
+			],
+			[
+				"th",
+				"th	Tag"
+			],
+			[
+				"en",
+				"entriesrange"
+			],
+			[
+				"bo",
+				"boardtitle"
+			],
+			[
+				"png",
+				"png"
+			],
+			[
+				"hea",
+				"headerH"
+			],
+			[
+				"fo",
+				"footer"
+			],
+			[
+				"he",
+				"headerH"
+			],
+			[
+				"win",
+				"windowH"
+			],
+			[
+				"re",
+				"resizeContent"
+			],
+			[
+				"n",
+				"nav"
+			],
+			[
+				"get",
+				"getUserDatasource"
+			],
+			[
 				"data",
 				"datasource"
 			],
@@ -12,28 +72,12 @@
 				"tabLink"
 			],
 			[
-				"get",
-				"getSpecificDatasource"
-			],
-			[
 				"fa",
 				"familyName"
 			],
 			[
-				"app",
-				"application"
-			],
-			[
 				"h",
 				"h2	Tag"
-			],
-			[
-				"th",
-				"thead	Tag"
-			],
-			[
-				"he",
-				"header	Tag"
 			],
 			[
 				"qui",
@@ -100,10 +144,6 @@
 				"quizzes"
 			],
 			[
-				"fo",
-				"form	Tag"
-			],
-			[
 				"lo",
 				"login"
 			],
@@ -146,10 +186,6 @@
 			[
 				"update",
 				"updateEntry"
-			],
-			[
-				"re",
-				"resultSheetID"
 			],
 			[
 				"da",
@@ -276,10 +312,6 @@
 				"windowW"
 			],
 			[
-				"add",
-				"addClass"
-			],
-			[
 				"cou",
 				"count_posts"
 			],
@@ -290,10 +322,6 @@
 			[
 				"ar",
 				"article	Tag"
-			],
-			[
-				"win",
-				"windowW"
 			],
 			[
 				"first",
@@ -451,7 +479,7 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 2576,
+				"buffer_size": 2603,
 				"line_ending": "Unix"
 			}
 		},
@@ -459,7 +487,7 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 4024,
+				"buffer_size": 3783,
 				"line_ending": "Unix"
 			}
 		},
@@ -467,7 +495,7 @@
 			"file": "app/js/leaderboard.js",
 			"settings":
 			{
-				"buffer_size": 2308,
+				"buffer_size": 6278,
 				"line_ending": "Unix"
 			}
 		},
@@ -475,15 +503,15 @@
 			"file": "app/css/leaderboard.css",
 			"settings":
 			{
-				"buffer_size": 4624,
+				"buffer_size": 5936,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/css/bootstrap-responsive.min.css",
+			"file": "app/css/bootstrap.min.css",
 			"settings":
 			{
-				"buffer_size": 11443,
+				"buffer_size": 82972,
 				"line_ending": "Unix"
 			}
 		}
@@ -524,8 +552,13 @@
 	},
 	"file_history":
 	[
-		"/home/yoda/workspace/factory-template-talkerdb/js/script.js",
+		"/home/yoda/workspace/template-leaderboard/app/css/leaderboard.css",
+		"/home/yoda/workspace/template-leaderboard/app/css/bootstrap.min.css",
+		"/home/yoda/workspace/template-quiz/app/js/quiz.js",
+		"/home/yoda/workspace/template-quiz/app/index.tablet.html",
+		"/home/yoda/workspace/template-leaderboard/app/css/bootstrap-responsive.min.css",
 		"/home/yoda/workspace/factory-template-talkerdb/css/bootstrap.css",
+		"/home/yoda/workspace/factory-template-talkerdb/js/script.js",
 		"/home/yoda/workspace/factory-template-talkerdb/css/bootstrap-responsive.css",
 		"/home/yoda/workspace/factory-template-talkerdb/css/bootstrap.min.css",
 		"/home/yoda/workspace/factory-template-talkerdb/index.html",
@@ -534,14 +567,12 @@
 		"/home/yoda/workspace/template-leaderboard/app/index.html",
 		"/home/yoda/workspace/ALBESSARD_Kevin_HTML5/css/style.css",
 		"/home/yoda/workspace/template-leaderboard/app/js/jquery1.7.2.js",
-		"/home/yoda/workspace/template-quiz/app/js/quiz.js",
 		"/home/yoda/Bureau/flags.js",
 		"/home/yoda/quiz.js",
 		"/tmp/fz3temp-1/script.js",
 		"/tmp/fz3temp-1/scripts.js",
 		"/home/yoda/workspace/template-quiz/app/css/mobile.css",
 		"/home/yoda/workspace/template-quiz/app/js/underscore.js",
-		"/home/yoda/workspace/template-quiz/app/index.tablet.html",
 		"/home/yoda/workspace/template-quiz/app/index.mobile.min.html",
 		"/home/yoda/workspace/factory-template-talkerdb/js/gdata.js",
 		"/home/yoda/workspace/factory-template-talkerdb/test.html",
@@ -657,6 +688,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"-image",
+			"navbar-inner",
+			"icon",
+			"table-str",
+			"table-striped tbody tr:nth-child(odd) td",
+			"striped",
+			"app.scores.children[i]",
+			"container",
 			"</td>",
 			"<td>",
 			"hidden",
@@ -776,15 +815,7 @@
 			"duration",
 			"contactpointhomeadress",
 			"other",
-			"\"\"",
-			"\"*\"",
-			"JSON",
-			"headin",
-			"head",
-			"resultSheetID",
-			"scope",
-			"appendRow",
-			"initTopRow"
+			"\"\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -792,6 +823,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"datasource",
 			"</th>",
 			"<th>",
 			"",
@@ -824,15 +857,15 @@
 					"file": "app/index.html",
 					"settings":
 					{
-						"buffer_size": 2576,
+						"buffer_size": 2603,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1300,
-								1300
+								963,
+								963
 							]
 						],
 						"settings":
@@ -842,7 +875,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1133.0,
+						"translation.y": 67.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -852,15 +885,15 @@
 					"file": "package.json",
 					"settings":
 					{
-						"buffer_size": 4024,
+						"buffer_size": 3783,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1271,
-								1271
+								3180,
+								3180
 							]
 						],
 						"settings":
@@ -870,7 +903,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 648.0,
+						"translation.y": 1674.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -886,15 +919,15 @@
 					"file": "app/js/leaderboard.js",
 					"settings":
 					{
-						"buffer_size": 2308,
+						"buffer_size": 6278,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1290,
-								1290
+								4498,
+								4498
 							]
 						],
 						"settings":
@@ -904,7 +937,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 486.0,
+						"translation.y": 1512.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -914,15 +947,15 @@
 					"file": "app/css/leaderboard.css",
 					"settings":
 					{
-						"buffer_size": 4624,
+						"buffer_size": 5936,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3228,
-								3228
+								3525,
+								3545
 							]
 						],
 						"settings":
@@ -932,35 +965,33 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 914.0,
+						"translation.y": 1188.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "app/css/bootstrap-responsive.min.css",
+					"file": "app/css/bootstrap.min.css",
 					"settings":
 					{
-						"buffer_size": 11443,
+						"buffer_size": 82972,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11355,
-								11355
+								22594,
+								22594
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.x": 201015.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -996,7 +1027,7 @@
 		"cols":
 		[
 			0.0,
-			0.417276720352,
+			0.218155197658,
 			1.0
 		],
 		"rows":
