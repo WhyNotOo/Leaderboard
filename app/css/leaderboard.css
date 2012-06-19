@@ -70,16 +70,18 @@ body, html                        {width:100%; height:100%; overflow:hidden; bac
 #container                        {position:relative; min-height:100%;}
   #container .nav .active a       {background:#5c4d47;}
 
-header, footer                    {position:relative; height:40px;}
+header, footer                    {position:relative; min-height:40px;}
+  header h1                       {font-size:18px; line-height:36px;}
+  header .navbar .nav > li > a     {color:#fff;}
   header h1, footer h4            {float:left; color:#fff;}
   header .navbar-inner,
-  footer .navbar-inner            {min-height:30px; background-color:#a4141d; background-image:-moz-linear-gradient(top,#ae161f,#98131b);background-image:-ms-linear-gradient(top,#ae161f,#98131b);background-image:-webkit-gradient(linear,0 0,0 100%,from(#ae161f),to(#98131b));background-image:-webkit-linear-gradient(top,#ae161f,#98131b);background-image:-o-linear-gradient(top,#ae161f,#98131b);background-image:linear-gradient(top,#ae161f,#98131b);}
-  footer h4                       {margin-top:5px;}
+  footer .navbar-inner            {min-height:30px; background:#fff;}
+  footer h4                       {margin-top:5px; color:#6D5D55;}
   footer .emirates                {position:absolute; width:6%; bottom:0; right:20px; box-shadow:0 3px 7px black;}
 
-#content                          {margin:10px 0 0 0; padding:0; color:#fff;}
+#content                          {margin:30px 0 0 0; padding:0; color:#fff;}
 .content                          {margin:0 auto; height:100%; overflow:auto;}
-  .content .table th, 
+  .content .table th,
   .content .table td              {text-align:center;}
   .content .table tr:nth-child(odd) td  {background:rgba(255, 255, 255, 0.1);}
   .content .table tr:hover td     {background:#a4141d;}
@@ -92,7 +94,7 @@ header, footer                    {position:relative; height:40px;}
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   .content          {width:100%;}
-  header h1, 
+  header h1,
   footer .emirates  {display:none;}
   ul                {padding:0;}
 }

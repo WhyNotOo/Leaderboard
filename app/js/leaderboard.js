@@ -29,7 +29,7 @@ var app = {
 
             if(app.options.entriesrange && app.options.entriesrange < user.length) {
               for(var i=0, len = app.options.entriesrange; i<len; i++) {
-                var date = app.getScoreDate(user[i].dateCreated);
+                var date = app.getScoreDate(user.dateCreated);
                 $('#content .content .table').append('<tr><td>'+(i+1)+'</td><td>'+user[i].familyName+'</td><td>'+user[i].givenName+'</td><td>'+user[i].nationality.name+'</td><td>'+date+'</td><td class="score">'+user[i]['quiz:score']+'</td></tr>');
               }
             } else {
@@ -69,7 +69,7 @@ var app = {
         alert('Une erreur est survenue pendant le chargement de l\'application. Merci de recharger la page.');
       } else {
         var user = data.entries, name = data.name.replace(' ', ''), userTable = app.table.clone();
-        
+
         $('#'+name).html(userTable);
 
         if(user.length == 0) {
@@ -115,17 +115,18 @@ var app = {
       });
     }
     if(app.options.colornavbartop && app.options.colornavbarbottom) {
-      var top = '#'+app.options.colornavbartop, bot = '#'+app.options.colornavbarbottom, navbar = document.getElementsByClassName('navbar-inner');
-      for(var i=0; i<navbar.length; i++) {
-        navbar[i].style.background = '-webkit-linear-gradient(top,'+top+','+bot+')';
-        navbar[i].style.background = '-moz-linear-gradient(top,'+top+','+bot+')';
-        navbar[i].style.background = '-ms-linear-gradient(top,'+top+','+bot+')';
-        navbar[i].style.background = '-o-linear-gradient(top,'+top+','+bot+')';
-        navbar[i].style.background = 'linear-gradient(top,'+top+','+bot+')';
-      }
+      var top = '#'+app.options.colornavbartop,
+          bot = '#'+app.options.colornavbarbottom,
+          navbar = document.getElementsByClassName('heading');
+
+      navbar[0].style.background = '-webkit-linear-gradient(top,'+top+','+bot+')';
+      navbar[0].style.background = '-moz-linear-gradient(top,'+top+','+bot+')';
+      navbar[0].style.background = '-ms-linear-gradient(top,'+top+','+bot+')';
+      navbar[0].style.background = '-o-linear-gradient(top,'+top+','+bot+')';
+      navbar[0].style.background = 'linear-gradient(top,'+top+','+bot+')';
     }
     if(app.options.colortext) {
-      $('header h1, footer h4').css('color', '#'+app.options.colortext);
+      $('header h1').css('color', '#'+app.options.colortext);
     }
   },
 
@@ -145,7 +146,6 @@ var app = {
   }
 
 }; /** END APP **/
-
 
 $('.nav a').live('click', function() {
   var link = $(this);
