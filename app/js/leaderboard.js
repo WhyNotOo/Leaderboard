@@ -20,11 +20,11 @@ var app = {
           alert('Une erreur est survenue pendant le chargement de l\'application. Merci de recharger la page.');
         } else {
           $.map(data.entries, function (entry, idx) {
-            var user = entry.entries;
+            var user = entry.entries,
+                userTable = app.table.clone();
 
             $('header h1').html(app.scores.children[0].name);
 
-            var userTable = app.table.clone();
             $('#content .content').prepend(userTable);
 
             if(app.options.entriesrange && app.options.entriesrange < user.length) {
@@ -46,14 +46,14 @@ var app = {
       $('.nav').removeClass('hidden');
 
       for(var i = 0, len = app.scores.children.length; i < len; i++) {
-        var datasource = app.scores.children[i];
-        var name = datasource.name.replace(' ', '');
+        var datasource = app.scores.children[i],
+            name = datasource.name.replace(' ', '');
 
         if(i == 0) {
-          $('.nav').find('.active a').attr('href', '#'+name).html(datasource.name);
+          $('.nav').find('.active a').attr('href', name).html(datasource.name);
           $('#content .content').append('<section id="'+name+'"></section>');
         } else {
-          $('.nav').append('<li><a href=""></a></li>').children('li:last-child').children('a').attr('href', '#'+name).html(datasource.name);
+          $('.nav').append('<li><a href=""></a></li>').children('li:last-child').children('a').attr('href', name).html(datasource.name);
           $('#content .content').append('<section id="'+name+'" class="hidden"></section>');
         }
 
@@ -68,7 +68,9 @@ var app = {
         console.log('erreur : '+err);
         alert('Une erreur est survenue pendant le chargement de l\'application. Merci de recharger la page.');
       } else {
-        var user = data.entries, name = data.name.replace(' ', ''), userTable = app.table.clone();
+        var user = data.entries,
+            name = data.name.replace(' ', ''),
+            userTable = app.table.clone();
 
         $('#'+name).html(userTable);
 
@@ -135,19 +137,20 @@ var app = {
     $('.nav').children().removeClass('active');
     link.parent().addClass('active');
     $('#content .content').children().addClass('hidden');
-    $(target).removeClass('hidden');
+    $('#'+target).removeClass('hidden');
   },
 
   resizeContent: function() {
-    var windowH = parseInt($(window).height(), 10);
-    var headerH = parseInt($('header').height(), 10);
-    var footerH = parseInt($('footer').height(), 10);
-    $('#content').height(windowH - headerH - footerH - 10);
+    var windowH = parseInt($(window).height(), 10),
+        headerH = parseInt($('header').height(), 10),
+        footerH = parseInt($('footer').height(), 10);
+    $('#content').height(windowH - headerH - footerH - 30);
   }
 
 }; /** END APP **/
 
-$('.nav a').live('click', function() {
+$('.nav a').live('click', function(e) {
+  e.preventDefault();
   var link = $(this);
   app.showContent(link);
 });

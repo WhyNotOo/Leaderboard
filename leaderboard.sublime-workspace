@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"type",
+				"typeof"
+			],
+			[
+				"date",
+				"dateM"
+			],
+			[
+				"mon",
+				"monthNames"
+			],
+			[
+				"gets",
+				"getScoreDate"
+			],
+			[
 				"colo",
 				"colortext"
 			],
@@ -479,7 +495,7 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 2603,
+				"buffer_size": 2423,
 				"line_ending": "Unix"
 			}
 		},
@@ -495,7 +511,7 @@
 			"file": "app/js/leaderboard.js",
 			"settings":
 			{
-				"buffer_size": 6278,
+				"buffer_size": 6672,
 				"line_ending": "Unix"
 			}
 		},
@@ -503,15 +519,7 @@
 			"file": "app/css/leaderboard.css",
 			"settings":
 			{
-				"buffer_size": 5936,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/css/bootstrap.min.css",
-			"settings":
-			{
-				"buffer_size": 82972,
+				"buffer_size": 5659,
 				"line_ending": "Unix"
 			}
 		}
@@ -519,7 +527,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 33.0,
 		"selected_items":
 		[
 			[
@@ -535,7 +543,7 @@
 				"Snippet: font: style variant weight size/line-height font-family"
 			]
 		],
-		"width": 467.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -552,10 +560,14 @@
 	},
 	"file_history":
 	[
-		"/home/yoda/workspace/template-leaderboard/app/css/leaderboard.css",
-		"/home/yoda/workspace/template-leaderboard/app/css/bootstrap.min.css",
 		"/home/yoda/workspace/template-quiz/app/js/quiz.js",
 		"/home/yoda/workspace/template-quiz/app/index.tablet.html",
+		"/home/yoda/Bureau/country.html",
+		"/home/yoda/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/yoda/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/yoda/workspace/template-quiz/package.json",
+		"/home/yoda/workspace/template-leaderboard/app/css/bootstrap.min.css",
+		"/home/yoda/workspace/template-leaderboard/app/css/leaderboard.css",
 		"/home/yoda/workspace/template-leaderboard/app/css/bootstrap-responsive.min.css",
 		"/home/yoda/workspace/factory-template-talkerdb/css/bootstrap.css",
 		"/home/yoda/workspace/factory-template-talkerdb/js/script.js",
@@ -688,6 +700,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"heading",
+			"[i]",
+			"console",
+			">",
+			"united",
+			"head",
+			"quarter1",
+			"successTitle",
+			"console",
 			"-image",
 			"navbar-inner",
 			"icon",
@@ -806,16 +827,7 @@
 			"robots",
 			"JSON",
 			"changes",
-			"'",
-			"'gsx:",
-			"talkerID",
-			"title",
-			"intervention",
-			"expertise",
-			"duration",
-			"contactpointhomeadress",
-			"other",
-			"\"\""
+			"'"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -823,6 +835,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			" data-country=\"\">",
+			"data-country=\"\">",
 			"",
 			"datasource",
 			"</th>",
@@ -849,7 +864,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -857,15 +872,15 @@
 					"file": "app/index.html",
 					"settings":
 					{
-						"buffer_size": 2603,
+						"buffer_size": 2423,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								963,
-								963
+								1209,
+								1209
 							]
 						],
 						"settings":
@@ -875,7 +890,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 67.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -892,8 +907,8 @@
 						"selection":
 						[
 							[
-								3180,
-								3180
+								1263,
+								1263
 							]
 						],
 						"settings":
@@ -903,7 +918,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1674.0,
+						"translation.y": 536.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -911,7 +926,7 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -919,15 +934,15 @@
 					"file": "app/js/leaderboard.js",
 					"settings":
 					{
-						"buffer_size": 6278,
+						"buffer_size": 6672,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4498,
-								4498
+								5356,
+								5356
 							]
 						],
 						"settings":
@@ -937,7 +952,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1512.0,
+						"translation.y": 1767.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -947,15 +962,15 @@
 					"file": "app/css/leaderboard.css",
 					"settings":
 					{
-						"buffer_size": 5936,
+						"buffer_size": 5659,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3525,
-								3545
+								3603,
+								3603
 							]
 						],
 						"settings":
@@ -965,33 +980,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1188.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/css/bootstrap.min.css",
-					"settings":
-					{
-						"buffer_size": 82972,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22594,
-								22594
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 201015.0,
-						"translation.y": 0.0,
+						"translation.y": 1134.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1027,7 +1016,7 @@
 		"cols":
 		[
 			0.0,
-			0.218155197658,
+			0.609077598829,
 			1.0
 		],
 		"rows":
@@ -1056,11 +1045,11 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"show_minimap": true,
 	"show_open_files": false,
