@@ -92,6 +92,11 @@
           "type": "string",
           "title": "Text color",
           "description": "The color for the text in the top and bottom navbars"
+        },
+        "refresh": {
+          "type": "string",
+          "title": "Timeout to refresh the scores",
+          "description": "Set a timer to refresh the page : 1000 = 1 seconde"
         }
       },
 
@@ -107,15 +112,19 @@
         },
         {
           "key": "colornavbartop",
-          "description": "The first color for the navbars (displayed top gradient)"
+          "description": "The first color for the Top navbar (displayed top gradient)"
         },
         {
           "key": "colornavbarbottom",
-          "description": "The second color for the navbars (displayed bottom gradient)"
+          "description": "The second color for the Top navbar (displayed bottom gradient)"
         },
         {
           "key": "colortext",
-          "description": "The color for the text in the top and bottom navbars"
+          "description": "The color for the text in the Top navbar"
+        },
+        {
+          "key": "refresh",
+          "description": "Set a timer to refresh the page : 1000 = 1 seconde"
         }
       ]
     },

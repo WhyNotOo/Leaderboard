@@ -42,7 +42,11 @@ var app = {
         }
       });
     } else {
-      $('title, header h1').html(app.options.boardtitle);
+      if(app.options.boardtitle)
+        $('title, header h1').html(app.options.boardtitle);
+      else
+        $('title, header h1').html('Leaderboard');
+
       $('.nav').removeClass('hidden');
 
       for(var i = 0, len = app.scores.children.length; i < len; i++) {
@@ -60,6 +64,9 @@ var app = {
         app.getUserDatasource(datasource);
       }
     }
+
+    if(app.options.refresh)
+      app.refreshContent(app.options.refresh);
   },
 
   getUserDatasource: function(datasource) {
@@ -145,7 +152,11 @@ var app = {
         headerH = parseInt($('header').height(), 10),
         footerH = parseInt($('footer').height(), 10);
     $('#content').height(windowH - headerH - footerH - 30);
-  }
+  },
+
+  refreshContent: function(timeout) {
+    setTimeout("location.reload(true);", timeout);
+  },
 
 }; /** END APP **/
 
