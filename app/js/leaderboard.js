@@ -14,7 +14,6 @@ var app = {
   getScores: function() {
     // If only one datasource
     if(app.scores.children.length == 1) {
-      //console.log('one datasources');
       app.scores.find({}, function (err, data) {
         if(err) {
           console.log('erreur : '+err);
@@ -43,7 +42,6 @@ var app = {
         }
       });
     } else {
-      //console.log('many datasources');
       if(app.options.boardtitle)
         $('title, header h1').html(app.options.boardtitle);
       else
@@ -53,7 +51,7 @@ var app = {
 
       for(var i = 0, len = app.scores.children.length; i < len; i++) {
         var datasource = app.scores.children[i],
-            name = datasource.name.replace(' ', '');
+            name = datasource.name.replace(/ /g, '');
 
         if(i == 0) {
           $('.nav').find('.active a').attr('href', name).html(datasource.name);
@@ -78,7 +76,7 @@ var app = {
         alert('Une erreur est survenue pendant le chargement de l\'application. Merci de recharger la page.');
       } else {
         var user = data.entries,
-            name = data.name.replace(' ', ''),
+            name = data.name.replace(/ /g, ''),
             userTable = app.table.clone();
 
         $('#'+name).html(userTable);
