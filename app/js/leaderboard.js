@@ -101,8 +101,33 @@ var app = {
   },
 
   getScoreDate: function(date) {
+    Date.prototype.setISO8601 = function (string) {
+        var regexp = "([0-9]{4})(-([0-9]{2})(-([0-9]{2})" +
+            "(T([0-9]{2}):([0-9]{2})(:([0-9]{2})(\.([0-9]+))?)?" +
+            "(Z|(([-+])([0-9]{2}):([0-9]{2})))?)?)?)?";
+        var d = string.match(new RegExp(regexp)),
+            offset = 0,
+            date = new Date(d[1], 0, 1);
+
+        if (d[3]) { date.setMonth(d[3] - 1); }
+        if (d[5]) { date.setDate(d[5]); }
+        if (d[7]) { date.setHours(d[7]); }
+        if (d[8]) { date.setMinutes(d[8]); }
+        if (d[10]) { date.setSeconds(d[10]); }
+        if (d[12]) { date.setMilliseconds(Number("0." + d[12]) * 1000); }
+        if (d[14]) {
+            offset = (Number(d[16]) * 60) + Number(d[17]);
+            offset *= ((d[15] == '-') ? 1 : -1);
+        }
+        offset -= date.getTimezoneOffset();
+        time = (Number(date) + (offset * 60 * 1000));
+        this.setTime(Number(time));
+    }
+
+    var dateCreated = new Date();
+    dateCreated.setISO8601(date);
+
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        dateCreated = new Date(date),
         dateD = dateCreated.getDate(),
         dateM = dateCreated.getMonth(),
         dateY = dateCreated.getFullYear(),
@@ -128,6 +153,8 @@ var app = {
           bot = '#'+app.options.colornavbarbottom,
           navbar = document.getElementsByClassName('heading');
 
+      navbar[0].style.background = top;
+      navbar[0].style.background = '-webkit-gradient(linear, left top, left bottom, from('+top+'), to('+bot+'))';
       navbar[0].style.background = '-webkit-linear-gradient(top,'+top+','+bot+')';
       navbar[0].style.background = '-moz-linear-gradient(top,'+top+','+bot+')';
       navbar[0].style.background = '-ms-linear-gradient(top,'+top+','+bot+')';
