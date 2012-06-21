@@ -14,6 +14,7 @@ var app = {
   getScores: function() {
     // If only one datasource
     if(app.scores.children.length == 1) {
+      //console.log('one datasources');
       app.scores.find({}, function (err, data) {
         if(err) {
           console.log('erreur : '+err);
@@ -42,6 +43,7 @@ var app = {
         }
       });
     } else {
+      //console.log('many datasources');
       if(app.options.boardtitle)
         $('title, header h1').html(app.options.boardtitle);
       else
