@@ -174,13 +174,6 @@ var app = {
     $('#'+target).removeClass('hidden');
   },
 
-  resizeContent: function() {
-    var windowH = parseInt($(window).height(), 10),
-        headerH = parseInt($('header').height(), 10),
-        footerH = parseInt($('footer').height(), 10);
-    $('#content').height(windowH - headerH - footerH - 30);
-  },
-
   refreshContent: function(timeout) {
     setTimeout("location.reload(true);", timeout);
   },
@@ -193,13 +186,8 @@ $('.nav a').live('click', function(e) {
   app.showContent(link);
 });
 
-$(window).resize(function() {
-  app.resizeContent();
-});
-
 // Launch APP
 $(document).ready(function() {
-  app.resizeContent();
   app.addCustomConfig();
   app.getScores();
 });

@@ -79,7 +79,7 @@ header, footer                    {position:relative; min-height:40px;}
   footer h4                       {margin-top:5px; color:#6D5D55;}
   footer .emirates                {position:absolute; width:6%; bottom:0; right:20px; box-shadow:0 3px 7px black;}
 
-#content                          {margin:30px 0 0 0; padding:0; color:#fff;}
+#content                          {width:100%; position:fixed; top:50px; bottom:50px; padding: 0; color:#fff;}
 .content                          {margin:0 auto; height:100%; overflow:auto;}
   .content .table th,
   .content .table td              {text-align:center;}
