@@ -78,7 +78,7 @@ header, footer                    {position:relative; min-height:40px;}
   header .navbar-inner,
   footer .navbar-inner            {min-height:30px; background:#fff;}
   footer h4                       {margin-top:5px; color:#6D5D55;}
-  footer .emirates                {position:absolute; width:6%; bottom:0; right:20px; box-shadow:0 3px 7px black;}
+  footer .logo                    {position:absolute; width:6%; bottom:0; right:20px; box-shadow:0 3px 7px black;}
 
 #content                          {width:100%; position:fixed; top:50px; bottom:50px; padding: 0; color:#fff;}
 .content                          {margin:0 auto; height:100%; overflow:auto;}
@@ -96,7 +96,7 @@ header, footer                    {position:relative; min-height:40px;}
 @media (max-width: 767px) {
   .content          {width:100%;}
   header h1,
-  footer .emirates  {display:none;}
+  footer .logo      {display:none;}
   ul                {padding:0;}
 }
 

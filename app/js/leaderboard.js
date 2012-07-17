@@ -141,7 +141,7 @@ var app = {
 
   addCustomConfig: function() {
     if(Joshfire.factory.config.app.icon) {
-      $('footer .container-fluid').append('<img src="'+Joshfire.factory.config.app.icon.contentURL+'" title="Emirates" class="emirates" />');
+      $('footer .container-fluid').append('<img src="'+Joshfire.factory.config.app.icon.contentURL+'" alt="Custom Logo" class="logo" />');
     }
 
     if(Joshfire.factory.config.app.logo) {
@@ -155,12 +155,12 @@ var app = {
     }
 
     if(app.options.linkheroku) {
-      $('header .container-fluid').append('<a href="'+app.options.linkheroku+'/leaderboard.csv" class="export btn btn-info">Export CSV</a>');
+      $('header .container-fluid').append('<a href="'+app.options.linkheroku+'leaderboard.csv" class="export btn btn-info">Export CSV</a>');
     }
 
-    if(app.options.colornavbartop && app.options.colornavbarbottom) {
+    if(app.options.colornavbartop) {
       var top = '#'+app.options.colornavbartop,
-          bot = app.colorLuminance(top, 0.8),
+          bot = app.colorLuminance(top, 0.3),
           navbar = document.getElementsByClassName('heading');
 
       navbar[0].style.background = top;
@@ -171,6 +171,7 @@ var app = {
       navbar[0].style.background = '-o-linear-gradient(top,'+top+','+bot+')';
       navbar[0].style.background = 'linear-gradient(top,'+top+','+bot+')';
     }
+
     if(app.options.colortext) {
       $('header h1').css('color', '#'+app.options.colortext);
     }
