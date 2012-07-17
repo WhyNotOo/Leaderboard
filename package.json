@@ -34,10 +34,20 @@
         "devices": [
           "phone",
           "tablet",
-          "desktop",
-          "tv"
+          "desktop"
         ],
         "startfile": "app/index.html",
+        "orientation": "auto",
+        "images": "marketing/leaderboard-big.png",
+        "screenshots": [
+          "marketing/screen1.png",
+          "marketing/screen2.png"
+        ],
+        "disablePreview": false
+      },
+      {
+        "devices": "tv",
+        "startfile": "app/index-tv.html",
         "orientation": "auto",
         "images": "marketing/leaderboard-big.png",
         "screenshots": [
@@ -68,11 +78,6 @@
           ],
           "default": "English"
         },
-        "linkheroku": {
-          "type": "string",
-          "title": "Link to Heroku app",
-          "description": "The link to your app in Heroku. Should be : http://myappname.herokuapp.com"
-        },
         "boardtitle": {
           "type": "string",
           "title": "Board title",
@@ -102,10 +107,6 @@
 
       "form": [
         "datasources.scores",
-        {
-          "key": "linkheroku",
-          "description": "The link to your app in Heroku. Should be : http://myappname.herokuapp.com"
-        },
         {
           "key": "boardtitle",
           "description": "The title displayed if there is more than one datasource."

@@ -154,10 +154,6 @@ var app = {
       });
     }
 
-    if(app.options.linkheroku) {
-      $('header .container-fluid').append('<a href="'+app.options.linkheroku+'leaderboard.csv" class="export btn btn-danger">Export CSV</a>');
-    }
-
     if(app.options.colornavbartop) {
       var top = '#'+app.options.colornavbartop,
           bot = app.colorLuminance(top, 0.3),
