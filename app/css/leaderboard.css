@@ -96,7 +96,8 @@ header, footer                    {position:relative; min-height:40px;}
 @media (max-width: 767px) {
   .content          {width:100%;}
   header h1,
-  footer .logo      {display:none;}
+  footer .logo,
+  header .export    {display:none;}
   ul                {padding:0;}
 }
 
