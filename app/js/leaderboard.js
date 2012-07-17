@@ -23,7 +23,10 @@ var app = {
             var user = entry.entries,
                 userTable = app.table.clone();
 
-            $('header h1').html(app.scores.children[0].name);
+            if(app.options.boardtitle)
+              $('title, header h1').html(app.options.boardtitle);
+            else
+              $('title, header h1').html(Joshfire.factory.config.app.name);
 
             $('#content .content').prepend(userTable);
 
@@ -45,7 +48,7 @@ var app = {
       if(app.options.boardtitle)
         $('title, header h1').html(app.options.boardtitle);
       else
-        $('title, header h1').html('Leaderboard');
+        $('title, header h1').html(Joshfire.factory.config.app.name);
 
       $('.nav').removeClass('hidden');
 
@@ -132,6 +135,7 @@ var app = {
         dateM = dateCreated.getMonth(),
         dateY = dateCreated.getFullYear(),
         month = monthNames[dateM];
+
     return month+' '+dateD+' '+dateY;
   },
 
@@ -139,6 +143,7 @@ var app = {
     if(Joshfire.factory.config.app.icon) {
       $('footer .container-fluid').append('<img src="'+Joshfire.factory.config.app.icon.contentURL+'" title="Emirates" class="emirates" />');
     }
+
     if(Joshfire.factory.config.app.logo) {
       $('#container').css({
         'background'              : 'url('+Joshfire.factory.config.app.logo.contentURL+') no-repeat center center fixed #5c4d47',
@@ -148,9 +153,14 @@ var app = {
         'background-size'         : 'cover'
       });
     }
+
+    if(app.options.linkheroku) {
+      $('header .container-fluid').append('<a href="'+app.options.linkheroku+'/leaderboard.csv" class="export btn btn-info">Export CSV</a>');
+    }
+
     if(app.options.colornavbartop && app.options.colornavbarbottom) {
       var top = '#'+app.options.colornavbartop,
-          bot = '#'+app.options.colornavbarbottom,
+          bot = app.colorLuminance(top, 0.8),
           navbar = document.getElementsByClassName('heading');
 
       navbar[0].style.background = top;
@@ -165,6 +175,23 @@ var app = {
       $('header h1').css('color', '#'+app.options.colortext);
     }
   },
+
+  colorLuminance: function(hex, lum) {
+    // validate hex string
+    hex = String(hex).replace(/[^0-9a-f]/gi, '');
+    if (hex.length < 6) {
+      hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+    }
+    lum = lum || 0;
+    // convert to decimal and change luminosity
+    var rgb = "#", c, i;
+    for (i = 0; i < 3; i++) {
+      c = parseInt(hex.substr(i*2,2), 16);
+      c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+      rgb += ("00"+c).substr(c.length);
+    }
+    return rgb;
+  }
 
   showContent: function(link) {
     var target = link.attr('href');

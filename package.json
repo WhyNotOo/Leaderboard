@@ -68,6 +68,11 @@
           ],
           "default": "English"
         },
+        "linkheroku": {
+          "type": "string",
+          "title": "Link to Heroku app",
+          "description": "The link to your app in Heroku. Should be : http://myappname.herokuapp.com"
+        },
         "boardtitle": {
           "type": "string",
           "title": "Board title",
@@ -82,11 +87,6 @@
           "type": "string",
           "title": "First color navbar",
           "description": "The first color for the navbars (displayed top gradient)"
-        },
-        "colornavbarbottom": {
-          "type": "string",
-          "title": "Second color navbar",
-          "description": "The second color for the navbars (displayed bottom gradient)"
         },
         "colortext": {
           "type": "string",
@@ -103,6 +103,10 @@
       "form": [
         "datasources.scores",
         {
+          "key": "linkheroku",
+          "description": "The link to your app in Heroku. Should be : http://myappname.herokuapp.com"
+        },
+        {
           "key": "boardtitle",
           "description": "The title displayed if there is more than one datasource."
         },
@@ -113,10 +117,6 @@
         {
           "key": "colornavbartop",
           "description": "The first color for the Top navbar (displayed top gradient)"
-        },
-        {
-          "key": "colornavbarbottom",
-          "description": "The second color for the Top navbar (displayed bottom gradient)"
         },
         {
           "key": "colortext",
