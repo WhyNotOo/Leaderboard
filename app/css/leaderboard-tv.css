@@ -1,2 +1,14 @@
 /*** Global style ***/
-body, html    {font-size:200%;}
+body, html    {font-size:130%;}
+
+header h1		  {line-height:50px; font-size:1em;}
+.navbar-inner {height:50px;}
+.container-fluid,
+.navbar .nav,
+.nav li   {height:100%;}
+.navbar .nav li a {height:60%; line-height:30px;}
+
+#content  {top:80px;}
+.table td {padding:20px;}
+
+footer h4			{line-height:45px;}
