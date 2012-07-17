@@ -191,7 +191,7 @@ var app = {
       rgb += ("00"+c).substr(c.length);
     }
     return rgb;
-  }
+  },
 
   showContent: function(link) {
     var target = link.attr('href');
